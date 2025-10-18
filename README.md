@@ -1,4 +1,4 @@
-# BOOLEAN_FUNCTION_MINIMIZATION
+
 
 **AIM:**
 
@@ -16,7 +16,12 @@ Hardware – PCs, Cyclone II , USB flasher
 
 **Theory**
 
-**Logic Diagram**
+The minimised expression of F1= A’B’C’D’+AC’D’+B’CD’+A’BCD+BC’D is F1=B'D' + ABC' + A'BD
+
+
+The minimised expression of F2=xy’z+x’y’z+w’xy+wx’y+wxy is F2= y′z + yw + yx
+
+
 
 **Procedure**
 
@@ -28,25 +33,36 @@ Hardware – PCs, Cyclone II , USB flasher
 
 4.	Create nodes for inputs and outputs to generate the timing diagram.
 
-5.	For different input combinations generate the timing diagram.
+5.	For different input combinations, generate the timing diagram.
 
 
 **Program:**
 
-/* Program to implement the given logic function and to verify its operations in quartus using Verilog programming. 
+/* Program to implement the given logic function and to verify its operations in Quartus using Verilog programming. 
+```
+module exp2(a,b,c,d,f1,w,x,y,z,f2); 
+input a,b,c,d,w,x,y,z; 
+output f1,f2; 
+assign f1=((~b & ~d)|(~a & b & d)|(a & b & ~c));
+assign f2=((~y & z)|( w & y )|(x & y)); 
+endmodule
+```
 
-Developed by: RegisterNumber:*/
 
+Developed by: Induja R Register Number:25001726
 
-**RTL realization**
+**RTL realisation**
+<img width="480" height="503" alt="Screenshot 2025-10-18 105157" src="https://github.com/user-attachments/assets/e78f275a-5b77-461a-ae98-a93ea363ae18" />
 
-**Output:**
 
 **RTL**
+<img width="1919" height="932" alt="Screenshot 2025-10-18 112849" src="https://github.com/user-attachments/assets/8dba101f-7b33-4dc7-a9de-6e5545b1cdc6" />
 
-**Timing Diagram**
+
 
 **Result:**
 
-Thus the given logic functions are implemented using and their operations are verified using Verilog programming.
+Thus, the given logic functions are implemented using and their operations are verified.
+
+
 
